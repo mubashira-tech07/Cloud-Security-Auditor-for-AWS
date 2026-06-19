@@ -1,0 +1,82 @@
+Step 1: Start the Program
+🪙Initialize the Cloud Security Auditor.
+🪙Create an empty list to store security findings.
+Purpose: Prepare the system to collect detected vulnerabilities.
+Step 2: Check IAM Root Account MFA
+🪙Access IAM account details.
+🪙Verify whether Multi-Factor Authentication (MFA) is enabled for the root account.
+If MFA is not enabled:
+Create a security finding.
+Mark severity as Critical.
+Store the finding in the report.
+Purpose: Protect the AWS root account from unauthorized access.
+Step 3: Check S3 Bucket Security
+🪙Retrieve S3 bucket configurations.
+🪙Verify Public Access Block settings.
+If public access is allowed:
+Create a security finding.
+Mark severity as High.
+Add the finding to the report.
+Purpose: Prevent sensitive data exposure.
+Step 4: Check EC2 Security Groups
+🪙Retrieve all EC2 Security Groups.
+🪙Analyze inbound firewall rules.
+Check whether ports are open to 0.0.0.0/0 (everyone).
+If unrestricted access is found:
+Create a security finding.
+Mark severity as High.
+Store the finding.
+Purpose: Prevent unauthorized network access.
+Step 5: Check RDS Database Encryption
+🪙Retrieve RDS database instances.
+🪙Verify storage encryption settings.
+If encryption is disabled:
+Create a security finding.
+Mark severity as Medium.
+Add the finding.
+Purpose: Protect stored database information.
+Step 6: Execute Audits in Parallel
+🪙Create a list of all audit functions:
+🪙IAM Audit
+🪙S3 Audit
+🪙Security Group Audit
+🪙RDS Audit
+🪙Run all audits simultaneously using ThreadPoolExecutor.
+Purpose: Reduce audit execution time.
+Step 7: Generate Security Report
+🪙Collect all findings.
+🪙Convert findings into JSON format.
+🪙Display the final report.
+Purpose: Provide a readable summary of detected vulnerabilities.
+Step 8: End Program
+Display the total number of findings.
+START
+
+Create Findings List
+
+Check Root Account MFA
+IF MFA Disabled
+    Add Critical Finding
+END IF
+
+Check S3 Bucket Access
+IF Public Access Enabled
+    Add High Severity Finding
+END IF
+
+Check Security Group Rules
+IF Open Access Detected
+    Add High Severity Finding
+END IF
+
+Check RDS Encryption
+IF Encryption Disabled
+    Add Medium Severity Finding
+END IF
+
+Generate Security Report
+
+Display Findings
+
+END
+Stop the auditor.
