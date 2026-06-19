@@ -54,6 +54,7 @@ Bash
 2. Configure AWS Credentials
 Python
 
+
 import os
 
 os.environ["AWS_ACCESS_KEY_ID"] = "YOUR_ACCESS_KEY"
@@ -91,6 +92,7 @@ JSON
 ]
 
 Future Improvements
+
 •Real-time AWS monitoring
 •Integration with AWS Security Hub
 •Automatic remediation of findings
