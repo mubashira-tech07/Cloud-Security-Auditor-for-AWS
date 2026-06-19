@@ -5,7 +5,7 @@ Purpose: Prepare the system to collect detected vulnerabilities.
 Step 2: Check IAM Root Account MFA
 🪙Access IAM account details.
 🪙Verify whether Multi-Factor Authentication (MFA) is enabled for the root account.
-If MFA is not enabled:
+🪙If MFA is not enabled:
 Create a security finding.
 Mark severity as Critical.
 Store the finding in the report.
